@@ -3,8 +3,10 @@
 import React, { useState } from 'react';
 import '../../../../public/styles/login.css';
 import Header from "../../../components/Header";
+import Link from 'next/link';
 import { useTranslations } from "next-intl";
 import Footer from "../../../components/Footer";
+
 
 function LoginForm() {
     const t = useTranslations("login");
@@ -13,7 +15,7 @@ function LoginForm() {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [error, setError] = useState("");
 
-    const handleChange = (event) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
         if (name === "email") setEmail(value);
         else setPassword(value);
@@ -23,7 +25,7 @@ function LoginForm() {
         setPasswordVisible(!passwordVisible);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (!email || !password) {
             setError("Please fill in both fields");
@@ -79,7 +81,9 @@ function LoginForm() {
                                 <input type="checkbox" id="remember-me" name="remember-me" />
                                 {t("Remember Me")}
                             </label>
-                            <a href="#" className="forgot-password">{t("Forgot Password?")}</a>
+                            <Link href="forgot-password">
+                                {t("Forgot Password?")}
+                            </Link>
                         </div>
                         <button type="submit" className="login-button wide-button">{t("LOGIN")}</button> {/* Wider button */}
                     </form>
@@ -96,3 +100,4 @@ function LoginForm() {
 }
 
 export default LoginForm;
+

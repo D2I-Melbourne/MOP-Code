@@ -78,12 +78,12 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="signup-page flex flex-col min-h-screen">
-      <Header showSignUpButton={false} />
+    <div className="signup-page dark:bg-zinc-800 flex flex-col min-h-screen">
+      <Header />
       <div className="flex flex-col items-center justify-center flex-grow">
         <div className="p-8 rounded-lg mt-12">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold mb-12">{t("Account Sign Up")}</h2>
+            <h2 className="text-2xl font-bold mb-12 dark:text-slate-200">{t("Account Sign Up")}</h2>
           </div>
           <form onSubmit={handleSubmit}>
             <div className="mb-4 flex">
@@ -110,6 +110,17 @@ const SignUpPage = () => {
                 onChange={(e) => setLastName(e.target.value)}
               />
             </div>
+            <p className="text-right text-sm text-gray-600 mt-2 dark:text-slate-100">
+              {t("Password Strength")}: {passwordStrength}
+            </p>
+          </div>
+          <button className="w-full bg-green-500 text-white py-2 px-2 rounded-md cursor-pointer">
+            {t("Next")}
+          </button>
+        </div>
+      </div>
+
+   
             <div className="mb-4">
               <label htmlFor="emailInput" className="sr-only">
                 Email

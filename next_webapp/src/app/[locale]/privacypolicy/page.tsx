@@ -7,6 +7,7 @@ const Privacypolicy: React.FC = () => {
   const t = useTranslations("privacypolicy");
 
   return (
+
     <div className="bg-gray-300"> {/* Slightly darker background for the page */}
       <Header />
       <main>
@@ -67,4 +68,4 @@ const Privacypolicy: React.FC = () => {
 };
 
 export default Privacypolicy;
-``
+

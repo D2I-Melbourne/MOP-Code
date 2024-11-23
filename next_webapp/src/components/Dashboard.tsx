@@ -268,6 +268,27 @@ const Dashboard = () => {
         { to: "/contact", icon: "/img/contact-icon.png", label: "Contact Us" },
     ];
 
+      <div className="main-wrapper dark:bg-zinc-800">
+        <div className="main-container">
+          <section className="hero-section">
+            <Image src={mainimage} alt={"main image1"} />
+          </section>
+          <section className="sign-up-btn-section">
+            <button className="sign-up-btn">
+              <Link href="signup">{t("Sign Up")}</Link>
+            </button>
+          </section>
+          <section className="our-vision-section">
+            <div className="our-vision">{t("Our Vision")}</div>
+            <div className="img-div">
+              <Image src={secondimage} alt={"Second Image"} />
+            </div>
+            <div className="text-div">{t("intro")}</div>
+          </section>
+          <section className="recent-case-studies ">
+            <h2 className="dark:text-slate-100">{t("Recent Case Studies")}</h2>
+            <p className="dark:text-slate-100">{t("p2")}</p>
+          </section>
     const t = useTranslations("common");
 
     if (selectedCaseStudy) {
